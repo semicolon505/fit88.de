@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220">
+  <rect width="220" height="220" rx="48" fill="#eaf2e8"/>
+  <circle cx="56" cy="60" r="30" fill="#dbe9d9"/>
+  <!-- lotus flower -->
+  <path d="M110 150 q-44 -8 -52 -52 q40 4 52 52 Z" fill="#8fbf8d"/>
+  <path d="M110 150 q44 -8 52 -52 q-40 4 -52 52 Z" fill="#8fbf8d"/>
+  <path d="M110 152 q-20 -30 0 -78 q20 48 0 78 Z" fill="#315b46"/>
+  <path d="M70 156 q40 26 80 0 q-12 30 -40 30 q-28 0 -40 -30 Z" fill="#7da77e"/>
+  <!-- warmth spark -->
+  <g stroke="#e58f65" stroke-width="7" stroke-linecap="round">
+    <line x1="166" y1="150" x2="166" y2="174"/><line x1="154" y1="162" x2="178" y2="162"/>
+  </g>
+</svg>

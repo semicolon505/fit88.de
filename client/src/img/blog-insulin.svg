@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#f0f5ef"/>
+  <circle cx="660" cy="90" r="80" fill="#dbe9d9"/>
+  <circle cx="110" cy="420" r="90" fill="#dbe9d9" opacity=".6"/>
+  <!-- glucose curve -->
+  <polyline points="90,300 200,290 280,330 380,230 480,270 580,180 700,205" fill="none" stroke="#7da77e" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="380" cy="230" r="13" fill="#315b46"/>
+  <circle cx="580" cy="180" r="13" fill="#315b46"/>
+  <!-- drop -->
+  <path d="M640 330 q-52 62 0 104 q52 -42 0 -104 Z" fill="#e58f65"/>
+  <path d="M640 356 q-24 30 0 52 q24 -22 0 -52 Z" fill="#f4c7ae"/>
+  <!-- plate -->
+  <circle cx="215" cy="392" r="72" fill="#ffffff" stroke="#dbe9d9" stroke-width="6"/>
+  <circle cx="215" cy="392" r="44" fill="#f0f5ef"/>
+  <path d="M215 356 a36 36 0 0 1 32 52 l-32 -16 Z" fill="#8fbf8d"/>
+  <circle cx="192" cy="404" r="13" fill="#e58f65"/>
+  <circle cx="235" cy="412" r="11" fill="#e8c86e"/>
+  <g stroke="#4a7a5e" stroke-width="6" stroke-linecap="round">
+    <line x1="90" y1="120" x2="90" y2="146"/><line x1="77" y1="133" x2="103" y2="133"/>
+  </g>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#f0f5ef"/>
+  <circle cx="120" cy="100" r="85" fill="#dbe9d9"/>
+  <circle cx="700" cy="410" r="95" fill="#dbe9d9" opacity=".65"/>
+  <!-- calendar -->
+  <rect x="150" y="110" width="330" height="290" rx="20" fill="#ffffff" stroke="#dbe9d9" stroke-width="6"/>
+  <rect x="150" y="110" width="330" height="64" rx="20" fill="#315b46"/>
+  <circle cx="200" cy="142" r="8" fill="#a9cba6"/>
+  <circle cx="430" cy="142" r="8" fill="#a9cba6"/>
+  <g stroke="#dbe9d9" stroke-width="7" stroke-linecap="round">
+    <line x1="195" y1="215" x2="245" y2="215"/><line x1="285" y1="215" x2="335" y2="215"/><line x1="375" y1="215" x2="425" y2="215"/>
+    <line x1="195" y1="265" x2="245" y2="265"/><line x1="285" y1="265" x2="335" y2="265"/><line x1="375" y1="265" x2="425" y2="265"/>
+  </g>
+  <g stroke="#7da77e" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M195 310 l14 14 26 -28"/><path d="M285 310 l14 14 26 -28"/><path d="M375 310 l14 14 26 -28"/>
+  </g>
+  <!-- water glass -->
+  <g>
+    <path d="M560 160 l16 250 q2 26 -24 26 l-24 0 q-26 0 -24 -26 l16 -250 Z" fill="#ffffff" stroke="#dbe9d9" stroke-width="6" transform="translate(40 0)"/>
+    <path d="M578 300 l8 112 q1 14 -12 14 l-14 0 q-13 0 -12 -14 l8 -112 Z" fill="#a9cba6" transform="translate(40 0)"/>
+  </g>
+  <!-- sneaker/steps -->
+  <path d="M540 430 q0 -34 34 -38 l96 -6 q26 4 26 26 l0 18 Z" fill="#8fbf8d"/>
+  <path d="M560 396 l10 -34 M596 390 l6 -32" stroke="#315b46" stroke-width="8" stroke-linecap="round"/>
+  <g stroke="#4a7a5e" stroke-width="6" stroke-linecap="round">
+    <line x1="700" y1="120" x2="700" y2="146"/><line x1="687" y1="133" x2="713" y2="133"/>
+  </g>
+</svg>

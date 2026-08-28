@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#f0f5ef"/>
+  <circle cx="680" cy="100" r="85" fill="#dbe9d9"/>
+  <circle cx="100" cy="400" r="90" fill="#dbe9d9" opacity=".6"/>
+  <!-- friendly stomach -->
+  <path d="M330 120 q0 -26 26 -26 q26 0 26 26 l0 30 q84 6 106 84 q26 96 -52 148 q-92 58 -172 -6 q-66 -56 -40 -150 q16 -58 106 -64 Z" fill="#e58f65"/>
+  <path d="M356 94 l0 60 M382 94 l0 60" stroke="#c96f47" stroke-width="0"/>
+  <path d="M330 120 q0 -26 26 -26 q26 0 26 26" fill="none" stroke="#c96f47" stroke-width="0"/>
+  <path d="M368 176 q60 10 72 70" stroke="#f4c7ae" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <circle cx="356" cy="260" r="14" fill="#ffffff" opacity=".9"/>
+  <circle cx="410" cy="300" r="11" fill="#ffffff" opacity=".75"/>
+  <circle cx="330" cy="320" r="9" fill="#ffffff" opacity=".6"/>
+  <!-- happy face on stomach -->
+  <circle cx="368" cy="256" r="7" fill="#5c3320"/>
+  <circle cx="416" cy="256" r="7" fill="#5c3320"/>
+  <path d="M370 282 q22 18 44 0" stroke="#5c3320" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <!-- good foods feeding in -->
+  <path d="M120 210 q60 -8 96 34" stroke="#7da77e" stroke-width="8" fill="none" stroke-linecap="round" stroke-dasharray="4 22"/>
+  <circle cx="112" cy="204" r="24" fill="#8fbf8d"/>
+  <path d="M112 180 q0 -14 12 -18" stroke="#4a7a5e" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <circle cx="130" cy="380" r="22" fill="#e8c86e"/>
+  <path d="M130 358 q0 -12 10 -16" stroke="#4a7a5e" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <rect x="580" y="330" width="120" height="56" rx="28" fill="#ffffff" stroke="#dbe9d9" stroke-width="6" transform="rotate(-14 640 358)"/>
+  <line x1="606" y1="352" x2="674" y2="336" stroke="#7da77e" stroke-width="12" stroke-linecap="round" transform="rotate(-14 640 358)"/>
+  <g stroke="#4a7a5e" stroke-width="6" stroke-linecap="round">
+    <line x1="700" y1="200" x2="700" y2="226"/><line x1="687" y1="213" x2="713" y2="213"/>
+  </g>
+</svg>

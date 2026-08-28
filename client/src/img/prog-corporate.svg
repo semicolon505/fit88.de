@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220">
+  <rect width="220" height="220" rx="48" fill="#eaf2e8"/>
+  <circle cx="58" cy="58" r="30" fill="#dbe9d9"/>
+  <!-- briefcase -->
+  <rect x="46" y="86" width="128" height="88" rx="16" fill="#315b46"/>
+  <path d="M92 86 v-12 q0 -10 10 -10 h16 q10 0 10 10 v12" fill="none" stroke="#315b46" stroke-width="10"/>
+  <rect x="46" y="118" width="128" height="12" fill="#203f31"/>
+  <rect x="100" y="112" width="20" height="24" rx="6" fill="#a9cba6"/>
+  <!-- apple peeking -->
+  <circle cx="176" cy="76" r="22" fill="#e58f65"/>
+  <path d="M176 54 q0 -12 12 -16" stroke="#4a7a5e" stroke-width="6" fill="none" stroke-linecap="round"/>
+</svg>

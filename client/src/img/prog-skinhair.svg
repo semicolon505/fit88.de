@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220">
+  <rect width="220" height="220" rx="48" fill="#eaf2e8"/>
+  <circle cx="60" cy="56" r="30" fill="#dbe9d9"/>
+  <!-- face profile hint -->
+  <circle cx="110" cy="120" r="52" fill="#f2d6be"/>
+  <path d="M84 96 q26 -26 52 -2 q-4 -34 -30 -34 q-22 0 -22 36 Z" fill="#3a3129"/>
+  <!-- hair shine strands -->
+  <path d="M150 84 q26 -8 34 -34" stroke="#7da77e" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <path d="M160 100 q30 -2 44 -24" stroke="#8fbf8d" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <!-- glow star -->
+  <path d="M158 148 l6 16 16 6 -16 6 -6 16 -6 -16 -16 -6 16 -6 Z" fill="#e8c86e"/>
+  <circle cx="94" cy="128" r="6" fill="#c98d63" opacity=".55"/>
+  <circle cx="126" cy="128" r="6" fill="#c98d63" opacity=".55"/>
+</svg>

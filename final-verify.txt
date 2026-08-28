@@ -1,0 +1,10 @@
+﻿=== VERIFY INSIDE ZIP ===
+NEW_REFS_FOUND=11
+OLD_REFS=0
+MANUS_HITS=0
+<link rel="icon" href="src/img/logo.png" type="image/png">
+<img src="src/img/logo.png" alt="fit88.de logo">
+<img src="src/img/hero-lineart.png" alt="خبير تغذية" class="hero-art">
+<img src="src/img/logo.png" alt="fit88">
+<img src="src/img/logo.png" alt="fit88.de">
+DONE

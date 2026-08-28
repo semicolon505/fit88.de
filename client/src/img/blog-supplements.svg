@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#f0f5ef"/>
+  <circle cx="110" cy="110" r="85" fill="#dbe9d9"/>
+  <circle cx="690" cy="400" r="95" fill="#dbe9d9" opacity=".65"/>
+  <!-- balance scale -->
+  <rect x="386" y="140" width="14" height="220" rx="7" fill="#315b46"/>
+  <path d="M300 168 q100 -44 200 0" fill="none" stroke="#315b46" stroke-width="12" stroke-linecap="round"/>
+  <rect x="356" y="352" width="76" height="14" rx="7" fill="#315b46"/>
+  <path d="M368 366 l-22 44 M420 366 l22 44" stroke="#315b46" stroke-width="10" stroke-linecap="round"/>
+  <!-- left pan: natural foods (heavier/down) -->
+  <g>
+    <line x1="304" y1="172" x2="264" y2="242" stroke="#315b46" stroke-width="8"/>
+    <line x1="304" y1="172" x2="344" y2="242" stroke="#315b46" stroke-width="8"/>
+    <path d="M252 242 h104 q-6 44 -52 44 q-46 0 -52 -44 Z" fill="#8fbf8d"/>
+    <circle cx="286" cy="228" r="13" fill="#e58f65"/>
+    <path d="M322 214 q10 -12 24 -10" stroke="#4a7a5e" stroke-width="6" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- right pan: pills (lighter/up) -->
+  <g>
+    <line x1="496" y1="168" x2="456" y2="216" stroke="#315b46" stroke-width="8"/>
+    <line x1="496" y1="168" x2="536" y2="216" stroke="#315b46" stroke-width="8"/>
+    <path d="M444 216 h104 q-6 40 -52 40 q-46 0 -52 -40 Z" fill="#dbe9d9"/>
+    <rect x="474" y="188" width="44" height="18" rx="9" fill="#ffffff" stroke="#b9d4b6" stroke-width="4" transform="rotate(-18 496 197)"/>
+  </g>
+  <!-- bottle -->
+  <g transform="translate(120 300)">
+    <rect x="0" y="34" width="86" height="120" rx="14" fill="#ffffff" stroke="#dbe9d9" stroke-width="6"/>
+    <rect x="18" y="6" width="50" height="30" rx="8" fill="#7da77e"/>
+    <line x1="16" y1="86" x2="70" y2="86" stroke="#dbe9d9" stroke-width="7" stroke-linecap="round"/>
+    <line x1="16" y1="112" x2="58" y2="112" stroke="#dbe9d9" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <g stroke="#4a7a5e" stroke-width="6" stroke-linecap="round">
+    <line x1="662" y1="130" x2="662" y2="156"/><line x1="649" y1="143" x2="675" y2="143"/>
+  </g>
+</svg>

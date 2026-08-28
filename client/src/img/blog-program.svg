@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#f0f5ef"/>
+  <circle cx="690" cy="110" r="85" fill="#dbe9d9"/>
+  <circle cx="100" cy="410" r="95" fill="#dbe9d9" opacity=".65"/>
+  <!-- smart scale -->
+  <rect x="300" y="180" width="240" height="240" rx="34" fill="#ffffff" stroke="#dbe9d9" stroke-width="6"/>
+  <rect x="360" y="230" width="120" height="74" rx="16" fill="#315b46"/>
+  <path d="M420 258 l14 14 26 -28" stroke="#a9cba6" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="392" y1="330" x2="448" y2="330" stroke="#dbe9d9" stroke-width="9" stroke-linecap="round"/>
+  <!-- progress rings -->
+  <g transform="translate(140 130)">
+    <circle cx="60" cy="60" r="52" fill="none" stroke="#dbe9d9" stroke-width="14"/>
+    <path d="M60 8 a52 52 0 1 1 -49 70" fill="none" stroke="#7da77e" stroke-width="14" stroke-linecap="round"/>
+    <path d="M46 58 l12 12 20 -24" stroke="#315b46" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <!-- plan checklist -->
+  <g transform="translate(580 260)">
+    <rect x="0" y="0" width="150" height="170" rx="14" fill="#ffffff" stroke="#dbe9d9" stroke-width="5"/>
+    <path d="M22 40 l10 10 18 -20" stroke="#7da77e" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="66" y1="42" x2="128" y2="42" stroke="#dbe9d9" stroke-width="8" stroke-linecap="round"/>
+    <path d="M22 84 l10 10 18 -20" stroke="#7da77e" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="66" y1="86" x2="118" y2="86" stroke="#dbe9d9" stroke-width="8" stroke-linecap="round"/>
+    <path d="M22 128 l10 10 18 -20" stroke="#7da77e" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="66" y1="130" x2="108" y2="130" stroke="#dbe9d9" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <!-- apple accent -->
+  <circle cx="250" cy="430" r="30" fill="#e58f65"/>
+  <path d="M250 400 q0 -14 13 -18" stroke="#4a7a5e" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <g stroke="#4a7a5e" stroke-width="6" stroke-linecap="round">
+    <line x1="676" y1="220" x2="676" y2="246"/><line x1="663" y1="233" x2="689" y2="233"/>
+  </g>
+</svg>

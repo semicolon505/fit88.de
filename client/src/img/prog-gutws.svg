@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220">
+  <rect width="220" height="220" rx="48" fill="#eaf2e8"/>
+  <circle cx="164" cy="56" r="30" fill="#dbe9d9"/>
+  <!-- friendly gut blob -->
+  <path d="M74 64 q36 -18 66 2 q30 20 22 56 q-8 40 -50 44 q-44 4 -60 -30 q-16 -36 22 -72 Z" fill="#e58f65"/>
+  <circle cx="96" cy="112" r="7" fill="#5c3320"/>
+  <circle cx="134" cy="112" r="7" fill="#5c3320"/>
+  <path d="M98 136 q17 14 34 0" stroke="#5c3320" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <!-- good bacteria sparks -->
+  <g fill="#8fbf8d">
+    <circle cx="58" cy="150" r="9"/>
+    <circle cx="168" cy="140" r="8"/>
+    <circle cx="150" cy="182" r="7"/>
+  </g>
+  <path d="M52 92 q10 -2 13 -12" stroke="#4a7a5e" stroke-width="5" fill="none" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220">
+  <rect width="220" height="220" rx="48" fill="#eaf2e8"/>
+  <circle cx="160" cy="60" r="32" fill="#dbe9d9"/>
+  <!-- crescent -->
+  <path d="M138 108 a52 52 0 1 1 -50 -70 a42 42 0 1 0 50 70 Z" fill="#315b46"/>
+  <circle cx="146" cy="52" r="7" fill="#e8c86e"/>
+  <!-- dates -->
+  <ellipse cx="66" cy="168" rx="16" ry="22" fill="#8a5a3b"/>
+  <ellipse cx="102" cy="174" rx="16" ry="22" fill="#a06a45"/>
+  <path d="M66 146 q0 -12 10 -16 M102 152 q0 -12 10 -16" stroke="#4a7a5e" stroke-width="5" fill="none" stroke-linecap="round"/>
+</svg>
