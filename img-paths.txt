@@ -1,9 +1,0 @@
-﻿=== Desktop recursive (png/jpg large) ===
-C:\Users\Raneem\Desktop\fit88\assets\hero-doctor-lineart.png
-C:\Users\Raneem\Desktop\fit88\assets\logo-transparent.png
-C:\Users\Raneem\Desktop\fit88\assets\logo.jpg
-C:\Users\Raneem\Desktop\fit88 - Copy\assets\hero-doctor-lineart.png
-C:\Users\Raneem\Desktop\fit88 - Copy\assets\logo-transparent.png
-C:\Users\Raneem\Desktop\fit88 - Copy\assets\logo.jpg
-C:\Users\Raneem\Desktop\RANEM KHARBTLI-P001Pr-2026.04.23-11.44.05.jpg
-=== Temp recent ===
