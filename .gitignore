@@ -17,6 +17,8 @@ build/
 # IDE and editor files
 .vscode/
 .idea/
+.manus/
+.kombai/
 *.swp
 *.swo
 *~
