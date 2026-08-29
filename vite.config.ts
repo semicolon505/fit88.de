@@ -209,7 +209,7 @@ function vitePluginLegacySiteScript(): Plugin {
     name: "legacy-site-script",
     transformIndexHtml(html, ctx) {
       if (!ctx.server) {
-        return html.replace('src="src/fit88.js"', `src="${BASE_PATH}fit88.js"`);
+        return html.replace('src="src/fit88.js"', `type="module" src="${BASE_PATH}fit88.js"`);
       }
       return html;
     },
