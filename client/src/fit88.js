@@ -24,6 +24,9 @@ function applyLang(lang) {
   document.body.classList.toggle("lang-de", german);
   document.documentElement.setAttribute("lang", german ? "de" : "ar");
   document.documentElement.setAttribute("dir", german ? "ltr" : "rtl");
+  document.querySelectorAll("[lang=ar], [lang=de]").forEach((element) => {
+    element.hidden = element.getAttribute("lang") !== (german ? "de" : "ar");
+  });
   localStorage.setItem("fit88-lang", lang);
   const button = document.querySelector(".lang-toggle");
   if (button) button.textContent = german ? "العربية" : "Deutsch";
