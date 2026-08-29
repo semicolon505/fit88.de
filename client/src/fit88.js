@@ -34,6 +34,31 @@ function applyLang(lang) {
   if (button) button.textContent = german ? "العربية" : "Deutsch";
 }
 
+function syncCourseToggleLabels() {
+  const lang = document.documentElement.getAttribute("lang") || "ar";
+  document.querySelectorAll(".course-card").forEach((card) => {
+    const btn = card.querySelector(".course-toggle");
+    if (!btn) return;
+    const open = card.classList.contains("open");
+    const key = `${open ? "close" : "open"}${lang === "de" ? "De" : "Ar"}`;
+    const label = btn.querySelector(".course-toggle-label");
+    if (label && btn.dataset[key]) label.textContent = btn.dataset[key];
+    btn.setAttribute("aria-expanded", String(open));
+  });
+}
+
+function initCourseToggles() {
+  document.querySelectorAll(".course-card").forEach((card) => {
+    const btn = card.querySelector(".course-toggle");
+    if (!btn) return;
+    btn.addEventListener("click", () => {
+      card.classList.toggle("open");
+      syncCourseToggleLabels();
+    });
+  });
+  syncCourseToggleLabels();
+}
+
 function keepSitePath(event) {
   const link = event.currentTarget;
   const target = link.getAttribute("href");
@@ -48,11 +73,13 @@ window.handleContactSubmit = handleContactSubmit;
 
 document.addEventListener("DOMContentLoaded", () => {
   applyLang(localStorage.getItem("fit88-lang") || "ar");
+  initCourseToggles();
   const banner = document.getElementById("cookieBanner");
   if (banner && !localStorage.getItem("fit88-cookies")) setTimeout(() => banner.classList.add("show"), 700);
 
   document.querySelector(".lang-toggle")?.addEventListener("click", () => {
     applyLang(document.body.classList.contains("lang-de") ? "ar" : "de");
+    syncCourseToggleLabels();
   });
   const navButton = document.querySelector(".nav-toggle-btn");
   const nav = document.querySelector(".main-nav");

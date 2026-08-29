@@ -26,3 +26,44 @@
 .skip-link{position:fixed;inset-inline-start:-9999px;top:10px;z-index:300;background:var(--green);color:#fff;padding:11px 20px;border-radius:12px;font-weight:700;box-shadow:var(--shadow)}
 .skip-link:focus{inset-inline-start:10px}
 @media(max-width:720px){.card-art{height:170px}}
+
+/* ===== الكورسات القابلة للتوسيع (show more / show less) ===== */
+.course-list{display:grid;gap:20px;max-width:880px;margin:auto}
+.course-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 10px 30px rgba(49,91,70,.04);transition:transform .22s,box-shadow .22s,border-color .28s}
+.course-card:hover{box-shadow:var(--shadow)}
+.course-card.open{border-color:rgba(49,91,70,.22);box-shadow:var(--shadow)}
+.course-head{display:flex;align-items:center;gap:18px;padding:22px 24px}
+.course-icon{width:62px;height:62px;border-radius:14px;flex-shrink:0}
+.course-head-text{flex:1;min-width:0}
+.course-head-text .badge{display:inline-block;margin-bottom:8px}
+.course-head-text h3{font-size:1.28rem;line-height:1.45;margin:0}
+.course-toggle{display:inline-flex;align-items:center;gap:9px;flex-shrink:0;border:1px solid var(--line);background:var(--surface);color:var(--green);font-weight:700;font-size:.84rem;border-radius:999px;padding:9px 16px;transition:background .18s,color .18s,border-color .18s,transform .16s}
+.course-toggle:hover{background:var(--green);border-color:var(--green);color:#fff}
+.course-toggle:active{transform:scale(.97)}
+.course-chevron{display:inline-block;font-size:.7rem;transition:transform .35s cubic-bezier(.23,1,.32,1)}
+.course-card.open .course-chevron{transform:rotate(180deg)}
+.course-preview{position:relative;padding:0 24px 22px;max-width:72ch}
+.course-preview p{color:var(--muted);font-size:.95rem}
+.course-preview:after{content:'';position:absolute;inset-inline:0;bottom:0;height:38px;pointer-events:none;background:linear-gradient(to bottom,transparent,var(--surface));opacity:1;transition:opacity .3s ease}
+.course-card.open .course-preview:after{opacity:0}
+.course-expand{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s cubic-bezier(.23,1,.32,1)}
+.course-expand-inner{overflow:hidden;min-height:0}
+.course-expand-inner>*{opacity:0;transform:translateY(8px);transition:opacity .28s ease,transform .35s cubic-bezier(.23,1,.32,1)}
+.course-card.open .course-expand-inner>*{opacity:1;transform:none;transition-delay:.06s}
+.course-bullets{list-style:none;display:grid;gap:10px;padding:2px 24px 24px}
+.course-bullets li{position:relative;display:flex;gap:10px;align-items:flex-start;color:var(--muted);font-size:.93rem;line-height:1.7}
+.course-bullets li:before{content:'';flex:0 0 8px;width:8px;height:8px;border-radius:50%;margin-top:10px;background:var(--green-2)}
+.course-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:18px 24px 24px;border-top:1px solid var(--line);background:linear-gradient(to right,transparent,var(--surface-soft));border-radius:0 0 21px 21px}
+.course-price{display:grid;gap:3px}
+.course-price strong{color:var(--green);font-size:.95rem}
+.course-price span{color:var(--muted);font-size:.8rem}
+.course-foot .btn{min-height:44px;padding:10px 18px}
+
+@media(max-width:720px){
+.course-head{flex-direction:column;align-items:stretch;gap:12px;padding:20px}
+.course-toggle{width:100%;justify-content:center}
+.course-preview{padding:0 20px 20px}
+.course-bullets{padding:2px 20px 20px}
+.course-foot{flex-direction:column;align-items:stretch;padding:16px 20px 20px}
+.course-foot .btn{width:100%}
+}
