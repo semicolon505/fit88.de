@@ -29,6 +29,14 @@ function applyLang(lang) {
   if (button) button.textContent = german ? "العربية" : "Deutsch";
 }
 
+function keepSitePath(event) {
+  const link = event.currentTarget;
+  const target = link.getAttribute("href");
+  if (!target || target.startsWith("#") || target.startsWith("http")) return;
+  event.preventDefault();
+  window.location.href = `${window.location.pathname.replace(/[^/]*$/, "")}${target}`;
+}
+
 window.acceptCookies = acceptCookies;
 window.declineCookies = declineCookies;
 window.handleContactSubmit = handleContactSubmit;
@@ -52,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     navButton.setAttribute("aria-expanded", String(open));
   });
   nav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeNav));
+  document.querySelectorAll('a[href$=".html"]').forEach((link) => link.addEventListener("click", keepSitePath));
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") closeNav();
   });
