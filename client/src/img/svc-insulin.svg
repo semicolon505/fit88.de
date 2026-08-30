@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220">
+  <rect width="220" height="220" rx="48" fill="#eaf2e8"/>
+  <circle cx="58" cy="58" r="30" fill="#dbe9d9"/>
+
+  <!-- glucose curve -->
+  <polyline points="36,150 70,132 100,150 136,104 184,118" fill="none" stroke="#7da77e" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="136" cy="104" r="7" fill="#315b46"/>
+  <circle cx="70" cy="132" r="6" fill="#315b46"/>
+
+  <!-- blood drop -->
+  <path d="M150 168 q-28 34 0 58 q28 -24 0 -58 Z" fill="#e58f65"/>
+  <path d="M150 184 q-14 18 0 32 q14 -14 0 -32 Z" fill="#f4c7ae"/>
+
+  <!-- small plate: healthy balance -->
+  <circle cx="74" cy="182" r="30" fill="#ffffff" stroke="#dbe9d9" stroke-width="5"/>
+  <circle cx="74" cy="182" r="18" fill="#f0f5ef"/>
+  <path d="M74 164 a18 18 0 0 1 16 26 l-16 -8 Z" fill="#8fbf8d"/>
+
+  <!-- check accent -->
+  <path d="M40 108 l10 10 18 -20" stroke="#7da77e" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
