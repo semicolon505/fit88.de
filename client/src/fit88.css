@@ -68,3 +68,17 @@
 .course-foot{flex-direction:column;align-items:stretch;padding:16px 20px 20px}
 .course-foot .btn{width:100%}
 }
+/* Language-aware WhatsApp / contact numbers */
+.contact-wa{display:grid;gap:0}
+.contact-wa-item{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.contact-wa-item:last-child{border-bottom:0}
+.contact-wa-info{display:grid;gap:4px}
+.contact-wa-info strong{color:var(--green);font-weight:700}
+.contact-wa-info .wa-num{color:var(--green-2);font-weight:700;direction:ltr;unicode-bidi:isolate}
+.contact-wa .btn-whatsapp{min-height:44px;padding:10px 20px;font-size:.9rem;white-space:nowrap}
+.footer-phone{display:flex;flex-wrap:wrap;gap:0 6px}
+.footer-phone a{direction:ltr;unicode-bidi:isolate;display:inline-block}
+@media (max-width:560px){
+  .contact-wa-item{flex-direction:column;align-items:flex-start}
+  .contact-wa .btn-whatsapp{width:100%}
+}

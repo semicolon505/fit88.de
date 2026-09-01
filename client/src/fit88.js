@@ -19,6 +19,17 @@ function handleContactSubmit(event) {
   window.location.href = `mailto:info@fit88.de?subject=${subject}&body=${body}`;
 }
 
+const WA_NUMBERS = { ar: "491744888845", de: "491625333817" };
+
+function syncWhatsAppLinks() {
+  const german = document.documentElement.getAttribute("lang") === "de";
+  const number = german ? WA_NUMBERS.de : WA_NUMBERS.ar;
+  document.querySelectorAll('a[href^="https://wa.me/"]').forEach((a) => {
+    if (a.classList.contains("wa-team")) return;
+    a.setAttribute("href", `https://wa.me/${number}`);
+  });
+}
+
 function applyLang(lang) {
   const german = lang === "de";
   document.body.classList.toggle("lang-de", german);
@@ -30,6 +41,7 @@ function applyLang(lang) {
     element.hidden = element.getAttribute("lang") !== (german ? "de" : "ar");
   });
   localStorage.setItem("fit88-lang", lang);
+  syncWhatsAppLinks();
   const button = document.querySelector(".lang-toggle");
   if (button) button.textContent = german ? "العربية" : "Deutsch";
 }
