@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html><head>
+  <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
+
+  <script type="module" src="/@vite/client"></script>
+<meta charset="utf-8"><title>face test</title>  <script src="/__manus__/debug-collector.js" defer=""></script>
+</head><body>
+<pre id="out">RESULT {"lang":"ar","vw":1440,"docLang":"ar","dir":"rtl","art":{"x":138,"y":224,"w":536,"h":536},"artArea":287296,"cardTop":{"x":566,"y":298,"w":117,"h":83},"cardTopOverlapPct":3,"cardBottom":{"x":134,"y":639,"w":181,"h":82},"cardBottomOverlapPct":5}</pre>
+<iframe id="f" style="border: 0px; width: 1440px; height: 900px;" src="index.html"></iframe>
+<script>
+const P = new URLSearchParams(location.search);
+const LANG = P.get("lang") || "de";
+const W = parseInt(P.get("w") || "1440", 10);
+const H = parseInt(P.get("h") || "900", 10);
+try { localStorage.setItem("fit88-lang", LANG); } catch (e) {}
+const f = document.getElementById("f");
+f.style.width = W + "px"; f.style.height = H + "px";
+f.src = "index.html";
+f.onload = () => setTimeout(() => {
+  try {
+    const d = f.contentDocument;
+    const q = (s) => d.querySelector(s);
+    const rect = (el) => { const b = el.getBoundingClientRect(); return { x: Math.round(b.x), y: Math.round(b.y), w: Math.round(b.width), h: Math.round(b.height) }; };
+    const inter = (a, b) => { const x = Math.max(0, Math.min(a.x + a.w, b.x + b.w) - Math.max(a.x, b.x)); const y = Math.max(0, Math.min(a.y + a.h, b.y + b.h) - Math.max(a.y, b.y)); return Math.round(x * y); };
+    const art = q(".hero-art"), top = q(".card-top"), bot = q(".card-bottom");
+    const A = rect(art), T = top ? rect(top) : null, B = bot ? rect(bot) : null;
+    const res = {
+      lang: LANG, vw: W, docLang: d.documentElement.getAttribute("lang"), dir: d.documentElement.getAttribute("dir"),
+      art: A, artArea: A.w * A.h,
+      cardTop: T, cardTopOverlapPct: T ? Math.round(100 * inter(A, T) / (A.w * A.h)) : null,
+      cardBottom: B, cardBottomOverlapPct: B ? Math.round(100 * inter(A, B) / (A.w * A.h)) : null
+    };
+    document.getElementById("out").textContent = "RESULT " + JSON.stringify(res);
+  } catch (e) { document.getElementById("out").textContent = "ERR " + e.message; }
+}, 900);
+</script>
+</body></html>

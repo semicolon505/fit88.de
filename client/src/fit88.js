@@ -79,11 +79,17 @@ function keepSitePath(event) {
   window.location.href = `${window.location.pathname.replace(/[^/]*$/, "")}${target}`;
 }
 
-window.acceptCookies = acceptCookies;
-window.declineCookies = declineCookies;
-window.handleContactSubmit = handleContactSubmit;
-
 document.addEventListener("DOMContentLoaded", () => {
+  // Cookie banner buttons (data-cookie-action) — no inline event handlers,
+  // so the CSP can keep script-src free of 'unsafe-inline'.
+  document.addEventListener("click", (event) => {
+    const trigger = event.target instanceof Element ? event.target.closest("[data-cookie-action]") : null;
+    if (!trigger) return;
+    if (trigger.getAttribute("data-cookie-action") === "accept") acceptCookies();
+    if (trigger.getAttribute("data-cookie-action") === "decline") declineCookies();
+  });
+  document.querySelector(".contact-form")?.addEventListener("submit", handleContactSubmit);
+
   applyLang(localStorage.getItem("fit88-lang") || "ar");
   initCourseToggles();
   const banner = document.getElementById("cookieBanner");

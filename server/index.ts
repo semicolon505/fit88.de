@@ -61,6 +61,11 @@ function compression() {
       }
 
       const body = Buffer.concat(chunks);
+
+      // Guard against double end() (e.g. a handler calling res.end() after
+      // sendFile already finished) — writing to a finished stream would crash.
+      if (res.writableEnded || res.writableFinished) return;
+
       const contentType = String(res.getHeader("content-type") ?? "");
 
       if (!res.headersSent && COMPRESSIBLE.test(contentType) && body.length >= MIN_COMPRESS_BYTES) {
@@ -85,14 +90,32 @@ function compression() {
   };
 }
 
+/**
+ * Content-Security-Policy. The production site has no inline scripts and no
+ * script injection surface, so script-src stays free of 'unsafe-inline'.
+ * Google Fonts (CSS + fonts) and the Google Maps embed on the contact page
+ * are the only cross-origin resources. Override at runtime with the
+ * CONTENT_SECURITY_POLICY env var if hosting requirements change.
+ */
+const CSP = process.env.CONTENT_SECURITY_POLICY
+  ?? "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src https://maps.google.com https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'self'; upgrade-insecure-requests";
+
 /** Minimal dependency-free response header hardening. */
 function securityHeaders() {
-  return (_req: Request, res: Response, next: NextFunction): void => {
+  return (req: Request, res: Response, next: NextFunction): void => {
+    res.setHeader("Content-Security-Policy", CSP);
     res.setHeader("X-Content-Type-Options", "nosniff");
     res.setHeader("X-Frame-Options", "SAMEORIGIN");
     res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
-    res.setHeader("X-XSS-Protection", "1; mode=block");
+    // Deprecated header; "0" is the OWASP-recommended value (legacy auditor off).
+    res.setHeader("X-XSS-Protection", "0");
     res.setHeader("Permissions-Policy", "camera=(), microphone=(), geolocation=(), interest-cohort=()");
+    res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
+    // HSTS is meaningful only over TLS; it is ignored on plain HTTP responses.
+    const forwardedProto = String(req.headers["x-forwarded-proto"] ?? "").split(",")[0]?.trim();
+    if (process.env.NODE_ENV === "production" || req.secure || forwardedProto === "https") {
+      res.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
+    }
     next();
   };
 }
@@ -106,7 +129,8 @@ function requestLogger() {
       const ms = Date.now() - start;
       const bytes = Number(res.getHeader("content-length") ?? 0);
       console.log(
-        `${res.statusCode} ${req.method.padEnd(4)} ${req.originalUrl} ${ms}ms ${
+        // Log path only — query strings can carry PII / campaign tokens.
+        `${res.statusCode} ${req.method.padEnd(4)} ${req.path} ${ms}ms ${
           bytes ? `${(bytes / 1024).toFixed(1)}KB` : ""
         }`,
       );
@@ -168,9 +192,9 @@ async function startServer() {
       res.status(404).type("text/plain").send("404 Not Found");
       return;
     }
+    // sendFile completes and ends the response itself — no extra res.end().
     res.status(404).sendFile(path.join(staticPath, "404.html"), (err) => {
       if (err) next(err);
-      else res.end();
     });
   });
 

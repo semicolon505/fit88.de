@@ -1,0 +1,31 @@
+<!doctype html><html><head><meta charset="utf-8"><title>face test</title></head><body>
+<pre id="out">PENDING</pre>
+<iframe id="f" style="border:0"></iframe>
+<script>
+const P = new URLSearchParams(location.search);
+const LANG = P.get("lang") || "de";
+const W = parseInt(P.get("w") || "1440", 10);
+const H = parseInt(P.get("h") || "900", 10);
+try { localStorage.setItem("fit88-lang", LANG); } catch (e) {}
+const f = document.getElementById("f");
+f.style.width = W + "px"; f.style.height = H + "px";
+f.src = "index.html";
+f.onload = () => setTimeout(() => {
+  try {
+    const d = f.contentDocument;
+    const q = (s) => d.querySelector(s);
+    const rect = (el) => { const b = el.getBoundingClientRect(); return { x: Math.round(b.x), y: Math.round(b.y), w: Math.round(b.width), h: Math.round(b.height) }; };
+    const inter = (a, b) => { const x = Math.max(0, Math.min(a.x + a.w, b.x + b.w) - Math.max(a.x, b.x)); const y = Math.max(0, Math.min(a.y + a.h, b.y + b.h) - Math.max(a.y, b.y)); return Math.round(x * y); };
+    const art = q(".hero-art"), top = q(".card-top"), bot = q(".card-bottom");
+    const A = rect(art), T = top ? rect(top) : null, B = bot ? rect(bot) : null;
+    const res = {
+      lang: LANG, vw: W, docLang: d.documentElement.getAttribute("lang"), dir: d.documentElement.getAttribute("dir"),
+      art: A, artArea: A.w * A.h,
+      cardTop: T, cardTopOverlapPct: T ? Math.round(100 * inter(A, T) / (A.w * A.h)) : null,
+      cardBottom: B, cardBottomOverlapPct: B ? Math.round(100 * inter(A, B) / (A.w * A.h)) : null
+    };
+    document.getElementById("out").textContent = "RESULT " + JSON.stringify(res);
+  } catch (e) { document.getElementById("out").textContent = "ERR " + e.message; }
+}, 900);
+</script>
+</body></html>
